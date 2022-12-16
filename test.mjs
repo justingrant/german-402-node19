@@ -3,7 +3,13 @@ const { equal } = assert;
 
 import { Intl } from '@js-temporal/polyfill';
 
+const epoch = new Date (1970,0,1)
+
 // May be an Intl bug: the de-AT date separator changed from "." to "/" in Node 19
 const germanDateFormatter = new Intl.DateTimeFormat("de-AT", { dateStyle: "short" });
-const germanDate = germanDateFormatter.format(new Date (1970,0,1));
+const germanDate = germanDateFormatter.format(epoch);
 equal (germanDate, '01.01.70');
+
+const germanMonthYearFormatter = new Intl.DateTimeFormat('de-AT', { year: '2-digit', month: '2-digit' });
+const germanMonthYear = germanMonthYearFormatter.format(epoch);
+equal (germanMonthYear, '01.70');
