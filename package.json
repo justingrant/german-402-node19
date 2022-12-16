@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/justingrant/german-402-node19/issues"
   },
-  "homepage": "https://github.com/justingrant/german-402-node19#readme"
+  "homepage": "https://github.com/justingrant/german-402-node19#readme",
+  "dependencies": {
+    "@js-temporal/polyfill": "^0.4.3"
+  }
 }
