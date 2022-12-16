@@ -1,10 +1,6 @@
 import { strict as assert } from 'assert';
 console.log(process.versions);
 
-const germanMonthYearFormatter1 = new Intl.DateTimeFormat('de-AT', { year: 'numeric', month: 'numeric' });
-assert.equal (germanMonthYearFormatter1.formatToParts(new Date (1976, 0, 15))[0].value, '01');
-
-
 // This assertion passes on my local machine with Node 19.3.0 with ICU 71.1
 // It fails with the same Node version in GH Actions that uses ICU 72.1
 const germanMonthYearFormatter = new Intl.DateTimeFormat('de-AT', { year: 'numeric', month: 'numeric' });
