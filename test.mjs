@@ -10,6 +10,10 @@ const germanDateFormatter = new Intl.DateTimeFormat("de-AT", { dateStyle: 'short
 const germanDate = germanDateFormatter.format(epoch);
 equal (germanDate, '01.01.70');
 
-const germanMonthYearFormatter = new Intl.DateTimeFormat('de-AT', { year: 'numeric', month: 'numeric', calendar: 'gregory' });
-const germanMonthYear = germanMonthYearFormatter.format(epoch);
-equal (germanMonthYear, '1.1970');
+const calendar = new Intl.DateTimeFormat("en").resolvedOptions().calendar;
+equal (calendar, 'gregory');
+
+const germanMonthYearFormatter = new Intl.DateTimeFormat('de-AT', { year: 'numeric', month: 'numeric', timeZone: "Europe/Vienna", calendar });
+const germanMonthYear = germanMonthYearFormatter.format(new Date (1976, 10, 15));
+equal (germanMonthYear, '11.1976');
+
