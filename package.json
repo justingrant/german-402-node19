@@ -1,0 +1,19 @@
+{
+  "name": "german-402-node19",
+  "version": "1.0.0",
+  "description": "Reproduce issues I see only in CI with Node 19's German Intl formats",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justingrant/german-402-node19.git"
+  },
+  "author": "Justin Grant (justingrant@users.noreply.github.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/justingrant/german-402-node19/issues"
+  },
+  "homepage": "https://github.com/justingrant/german-402-node19#readme"
+}
