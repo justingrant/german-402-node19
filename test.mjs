@@ -12,4 +12,4 @@ equal (germanDate, '01.01.70');
 
 const germanMonthYearFormatter = new Intl.DateTimeFormat('de-AT', { year: 'numeric', month: 'numeric', calendar: 'gregory' });
 const germanMonthYear = germanMonthYearFormatter.format(epoch);
-equal (germanMonthYear, '01.70');
+equal (germanMonthYear, '1.1970');
