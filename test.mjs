@@ -1,9 +1,5 @@
 import { strict as assert } from 'assert';
-const { equal } = assert;
-
-// May be an Intl bug: the de-AT date separator changed from "." to "/" in Node 19
-const options = { year: 'numeric', month: 'numeric' };
-const germanMonthYearFormatter = new Intl.DateTimeFormat('de-AT', options);
-const germanMonthYear = germanMonthYearFormatter.format(new Date (1976, 10, 15));
-equal (germanMonthYear, '11.1976');
+const germanMonthYearFormatter = new Intl.DateTimeFormat('de-AT', { year: 'numeric', month: 'numeric' });
+// This assertion passes in Node 18, fails in Node 19.2.0. But only in GH actions. Works OK in my local Node 19.2.0.
+assert.equal (germanMonthYearFormatter.format(new Date (1976, 10, 15)), '11.1976');
 
