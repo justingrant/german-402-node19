@@ -4,7 +4,7 @@
   "description": "Reproduce issues I see only in CI with Node 19's German Intl formats",
   "main": "index.js",
   "scripts": {
-    "test": "node test.mjs"
+    "test": "node --no-warnings --experimental-modules --experimental-specifier-resolution=node --icu-data-dir node_modules/full-icu test.mjs"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/justingrant/german-402-node19#readme",
   "dependencies": {
-    "@js-temporal/polyfill": "^0.4.3"
+    "@js-temporal/polyfill": "^0.4.3",
+    "full-icu": "^1.5.0"
   }
 }
