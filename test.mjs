@@ -10,6 +10,6 @@ const germanDateFormatter = new Intl.DateTimeFormat("de-AT", { dateStyle: 'short
 const germanDate = germanDateFormatter.format(epoch);
 equal (germanDate, '01.01.70');
 
-const germanMonthYearFormatter = new Intl.DateTimeFormat('de-AT', { year: '2-digit', month: '2-digit', calendar: 'gregory' });
+const germanMonthYearFormatter = new Intl.DateTimeFormat('de-AT', { year: 'numeric', month: 'numeric', calendar: 'gregory' });
 const germanMonthYear = germanMonthYearFormatter.format(epoch);
 equal (germanMonthYear, '01.70');
